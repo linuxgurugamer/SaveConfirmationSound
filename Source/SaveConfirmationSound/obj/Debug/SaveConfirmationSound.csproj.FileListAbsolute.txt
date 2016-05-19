@@ -1,0 +1,5 @@
+c:\users\daniel7\documents\visual studio 2015\Projects\SaveConfirmationSound\SaveConfirmationSound\obj\Debug\SaveConfirmationSound.csprojResolveAssemblyReference.cache
+c:\users\daniel7\documents\visual studio 2015\Projects\SaveConfirmationSound\SaveConfirmationSound\bin\Debug\SaveConfirmationSound.dll
+c:\users\daniel7\documents\visual studio 2015\Projects\SaveConfirmationSound\SaveConfirmationSound\bin\Debug\SaveConfirmationSound.pdb
+c:\users\daniel7\documents\visual studio 2015\Projects\SaveConfirmationSound\SaveConfirmationSound\obj\Debug\SaveConfirmationSound.dll
+c:\users\daniel7\documents\visual studio 2015\Projects\SaveConfirmationSound\SaveConfirmationSound\obj\Debug\SaveConfirmationSound.pdb
