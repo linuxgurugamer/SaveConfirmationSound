@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
 using UnityEngine;
+using KSP;
 
 namespace PersistantControl
 {
     [KSPAddon(KSPAddon.Startup.MainMenu, true)]
-    public class SaveConfirmationSound : MonoBehaviour
+    public class PersistantControl : MonoBehaviour
     {
         public string settingsURL = "GameData/SaveConfirmationSound/settings.cfg";
         public bool DEBUG = false;
@@ -43,32 +44,25 @@ namespace PersistantControl
             }
         }
 
-        void LateUpdate()
+
+        private void LoadVessel(Vessel vessel)
         {
-            if (launcherButtonNeedsInitializing)
-            {
-                Log("LateUpdate()", false);
-                Audio.initializeAudio();
-
-                GameEvents.onGameStateSaved.Add(OnSave);
-
-                launcherButtonNeedsInitializing = false;
-                updateStopwatch = new Stopwatch();
-                updateStopwatch.Start();
-
-                LoadSettings(settingsURL);
-
-                ModuleWheelBase myModuleWheelBase = new ModuleWheelBase();
-
-                Joint[] j = myModuleWheelBase.GetComponents<Joint>();
-
-                foreach (Joint jo in j)
-                {
-                    UnityEngine.Debug.DrawLine(jo.transform.localPosition, jo.connectedBody.gameObject.transform.localPosition);
-                }
-
-            }
+            vessel.SetReferenceTransform(vessel.parts[0], true);
+            ;
         }
+
+        private void SetControlPart(Transform transformA, Transform transformB)
+        {
+            ;
+        }
+
+        private void AddEvents()
+        {
+            GameEvents.onVesselChange.Add(LoadVessel);
+            GameEvents.onVesselReferenceTransformSwitch.Add(SetControlPart);
+            base.events
+        }
+
 
         private void OnSave(Game data)
         {
